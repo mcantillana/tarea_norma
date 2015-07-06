@@ -56,17 +56,10 @@ $sidebar = array(
                 'link' => '#'
             ),
             array(
-                'nombre' => 'Actualizar',
-                'link' => '#'
-            ),
-            array(
                 'nombre' => 'Listar',
-                'link' => '#'
+                'link' => '/EXAMENFINAL/usuario/'
             ),
-            array(
-                'nombre' => 'Eliminar',
-                'link' => '#'
-            ),                                
+                                         
         )
         ), 
         array( 
@@ -121,18 +114,12 @@ $sidebar = array(
                 'nombre' => 'Agregar',
                 'link' => '#'
             ),
-            array(
-                'nombre' => 'Actualizar',
-                'link' => '#'
-            ),
+            
             array(
                 'nombre' => 'Listar',
-                'link' => '#'
+                'link' => '/EXAMENFINAL/productos/'
             ),
-            array(
-                'nombre' => 'Eliminar',
-                'link' => '#'
-            ),                                
+                                           
         )
         ),
         array( 
@@ -144,17 +131,10 @@ $sidebar = array(
                 'link' => '#'
             ),
             array(
-                'nombre' => 'Actualizar',
-                'link' => '#'
-            ),
-            array(
                 'nombre' => 'Listar',
-                'link' => '#'
+                'link' => '/EXAMENFINAL/tipo_producto/'
             ),
-            array(
-                'nombre' => 'Eliminar',
-                'link' => '#'
-            ),                                
+                                          
         )
         ),
         array( 

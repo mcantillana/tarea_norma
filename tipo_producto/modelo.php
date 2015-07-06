@@ -26,6 +26,18 @@ class Tipo_producto extends DBAbstractModel{
         return false;
     }
 
+    # Traer datos de un perfil
+    public function gets() {        
+        
+        $this->query = "SELECT id_tipoProducto, 
+                               descripcion_tipo
+                        FROM tipo_producto
+                        ORDER BY id_tipoProducto ASC";
+        $this->get_results_from_query();            
+    
+        return $this->rows;
+    }
+
     # Crear una nuevo tipo producto
     public function set($tproducto_data=array()) {
         if(array_key_exists('id' , $tproducto_data)) {

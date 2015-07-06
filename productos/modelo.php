@@ -5,6 +5,23 @@ require_once '../core/DBAbstractModel.php';
 class Productos extends DBAbstractModel{
     
     # Traer datos de un producto
+    public function gets() {        
+        
+        $this->query = "SELECT productos.id_producto, 
+                               tipo_producto.descripcion_tipo AS nomnre_tipo,
+                               productos.descripcion,
+                               productos.precio,
+                               productos.unidad
+                        FROM tipo_producto
+                        INNER JOIN productos
+                        ON productos.tipo_producto_id_tipoProducto = tipo_producto.id_tipoProducto
+                        ORDER BY productos.id_producto ASC";
+        $this->get_results_from_query();            
+    
+        return $this->rows;
+    }
+
+    # Traer datos de un producto
     public function get($id='' ) {        
         if($id != '') {
             $this->query = "SELECT id_producto, 

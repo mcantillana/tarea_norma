@@ -1,6 +1,6 @@
 <?php
-    # @author. Jazna
-    # @versión. Mayo 2015
+    # @author. Norma Soto
+    # @versión. Julio 2015
     
     require_once('../core/Controles.php' );
     require_once('constant.php' );

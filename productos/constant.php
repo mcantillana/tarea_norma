@@ -3,10 +3,11 @@
 # @versión. Junio-Julio 2015
 const MODULO = 'productos/' ;
 # controladores action
-const SET_MOVIE = 'set' ;
-const GET_MOVIE = 'get' ;
-const DELETE_MOVIE = 'delete' ;
-const EDIT_MOVIE = 'edit' ;
-const VIEW_MOVIE = 'list';
-# vistas todos con un html
+const SET_PRODUCTO = 'set' ;
+const GET_PRODUCTO = 'get' ;
+const DELETE_PRODUCTO = 'delete' ;
+const EDIT_PRODUCTO = 'edit' ;
+const GET_PRODUCTO_LISTAR 	= 'ver' ;
+# vistas
+const VIEW_PRODUCTO_LISTAR 	= 'listar' ;
 ?>
