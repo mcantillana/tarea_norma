@@ -1,78 +1,9 @@
-<?php
-session_start();
-if(!isset($_SESSION['username'])) {
-	header('Location: controller.php'); 
-	exit();
-}
-?>
-
 	<div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
-            {menu_lateral}
-                <!-- <h5><i class="glyphicon glyphicon-th-list"></i>
-                    <small><b>INGRESAR RECETA</b></small>
-                </h5>
-                <ul class="nav nav-pills nav-stacked">
-                    <li><a href="#">Agregar Venta</a></li>
-                    <li><a href="#">Ver Detalle</a></li>
-                    <li><a href="#">Ver Ventas Hechas</a></li>
-                </ul>
-                <h5><i class="glyphicon glyphicon-user"></i>
-                    <small><b>USUARIOS</b></small>
-                </h5>
-                <ul class="nav nav-pills nav-stacked">
-                    <li><a href="#">Agregar</a></li>
-                    <li><a href="#">Actualizar</a></li>
-                    <li><a href="#">Listar</a></li>
-                    <li><a href="#">Eliminar</a></li>
-                </ul>
-                <h5><i class="glyphicon glyphicon-edit"></i>
-                    <small><b>PERFILES DE USUARIO</b></small>
-                </h5>
-                <ul class="nav nav-pills nav-stacked">
-                    <li><a href="#">Agregar</a></li>
-                    <li><a href="#">Actualizar</a></li>
-                    <li><a href="#">Listar</a></li>
-                    <li><a href="#">Eliminar</a></li>
-                </ul>
-                <h5><i class="glyphicon glyphicon-shopping-cart"></i>
-                    <small><b>ORDEN DE COMPRA</b></small>
-                </h5>
-                <ul class="nav nav-pills nav-stacked">
-                    <li><a href="#">Agregar</a></li>
-                    <li><a href="#">Actualizar</a></li>
-                    <li><a href="#">Listar</a></li>
-                    <li><a href="#">Eliminar</a></li>
-                </ul>
-                <h5><i class="glyphicon glyphicon-phone"></i>
-                    <small><b>PRODUCTOS</b></small>
-                </h5>
-                <ul class="nav nav-pills nav-stacked">
-                    <li><a href="#">Agregar</a></li>
-                    <li><a href="#">Actualizar</a></li>
-                    <li><a href="#">Listar</a></li>
-                    <li><a href="#">Eliminar</a></li>
-                </ul>
-                <h5><i class="glyphicon glyphicon-check"></i>
-                    <small><b>TIPO PRODUCTOS</b></small>
-                </h5>
-                <ul class="nav nav-pills nav-stacked">
-                    <li><a href="#">Agregar</a></li>
-                    <li><a href="#">Actualizar</a></li>
-                    <li><a href="#">Listar</a></li>
-                    <li><a href="#">Eliminar</a></li>
-                </ul>
-                <h5><i class="glyphicon glyphicon-signal"></i>
-                    <small><b>CONSULTAS</b></small>
-                </h5>
-                <ul class="nav nav-pills nav-stacked">
-                    <li><a href="#">Producto Más Vendido</a></li>
-                    <li><a href="#">Fecha con Mayor Número de Orden de Compra</a></li>
-                </ul> -->
-                
+            {menu_lateral}                
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Panel de Control <small>Administrador</small>  </h1>
+          <h1 class="page-header">Panel de Control <small>{perfil}</small>  </h1>
 
           <div class="row ">
 

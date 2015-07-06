@@ -83,7 +83,7 @@ $sidebar = array(
             ),
             array(
                 'nombre' => 'Listar',
-                'link' => '#'
+                'link' => '/EXAMENFINAL/perfil/'
             ),
             array(
                 'nombre' => 'Eliminar',

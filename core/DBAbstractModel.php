@@ -44,6 +44,7 @@ abstract class DBAbstractModel extends GenericBL{
     # Traer resultados de una consulta en un Array
     protected function get_results_from_query() {
         $this->open_connection();
+        $this->rows = '' ;
         $result = $this->conexion->query($this->query);        
 
         while ($this->rows[] = $result->fetch_assoc());

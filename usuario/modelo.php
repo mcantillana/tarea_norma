@@ -94,6 +94,20 @@ class Usuario extends DBAbstractModel{
 		unset($this);
 	}    
 	
+    function getNombrePerfil($perfil_id) {
+
+        if ($perfil_id) {            
+            $this->query = "SELECT descripcion_perfil FROM `perfil` WHERE id_perfil = ".$perfil_id;
+            $this->get_results_from_query();
+            if (count($this->rows)>0) {
+                return $this->rows[0]['descripcion_perfil'] ;
+            }
+
+        }
+
+        return false ;
+
+    }
 	# Verifica usuario 
 	public function chequeaLogin($login='', $password='') {
 		

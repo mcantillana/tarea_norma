@@ -6,6 +6,7 @@
     require_once('constant.php' );
     require_once('modelo.php' );
     require_once('view.php' );
+    require_once('../core/General.php' );
     
     function handler() {
         $event = VIEW_LOGIN;
@@ -26,7 +27,8 @@
                 if (array_key_exists("login", $usuario_data)){
                     $data = array();
                     if ($usuario->chequeaLogin($usuario_data['login'], $usuario_data['password'] )){
-                        session_start();            
+                        session_start();        
+
                         $_SESSION['username'] = $usuario->nombre_usuario;
                         $_SESSION['perfil'] = $usuario->Perfil_id_perfil;                                                
                         
@@ -35,13 +37,13 @@
                         /* Acá dependiendo del tipo de perfil se deriva a una vista o a otra */                                
                         
                         // vista_login('panel', $data);    
-                        
 
-                        #magia del hombre blanco
-                        include_once ('../general.php');   
+                        global $quickbutton;
+                        global $sidebar;
 
                         $data['menu_rapido'] = botones_rapidos($quickbutton);
                         $data['menu_lateral'] = vista_sidebar($sidebar);
+                        $data['perfil'] = $usuario->getNombrePerfil($_SESSION['perfil']);
 
                         retornar_vista_dinamica('panel', $data);    
 

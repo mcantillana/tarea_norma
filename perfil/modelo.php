@@ -4,6 +4,18 @@
 require_once '../core/DBAbstractModel.php';
 
 class Perfil extends DBAbstractModel{
+
+    # Traer datos de un perfil
+    public function gets() {        
+        
+        $this->query = "SELECT id_perfil, descripcion_perfil
+                        FROM perfil
+                        ORDER BY id_perfil ASC";
+        $this->get_results_from_query();            
+    
+        return $this->rows;
+    }
+
     
     # Traer datos de un perfil
     public function get($id='' ) {        

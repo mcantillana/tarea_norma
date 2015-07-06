@@ -50,7 +50,7 @@ class Grid{
     
     # Retorna el objeto como una cadena de caracteres
     public function getString(){
-        $salida = "<table><caption align='top'><h3>" . $this->_titulo . "</h3></caption><thead><tr>";
+        $salida = "<table class=\"table table-condensed\"><caption align='top'><h3>" . $this->_titulo . "</h3></caption><thead><tr>";
         # Arma el los encabezados considerando las columnas
         foreach($this->_headers as $columna => $valor){
             $salida .= "<th>" . $valor . "</th>"; 

@@ -1,6 +1,6 @@
 <?php
-    # @author. Jazna
-    # @versión. Junio 2015
+    # @author. Norma Soto
+    # @versión. Julio 2015
     
     $diccionario = array(
         'subtitle' =>array(VIEW_LOGIN=>'Login de la aplicación'),
