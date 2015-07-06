@@ -41,6 +41,19 @@ abstract class DBAbstractModel extends GenericBL{
         }        
         return $resultado;
     }
+
+    # Ejecutar un query simple del tipo INSERT, DELETE, UPDATE
+    protected function execute_single_query2() {
+        $resultado = false;
+        
+        $this->open_connection();
+        $result = $this->conexion->query($this->query);
+        $resultado = ($this->conexion->affected_rows>=1);
+        $this->close_connection();
+    
+        return $resultado;
+    }
+
     # Traer resultados de una consulta en un Array
     protected function get_results_from_query() {
         $this->open_connection();
