@@ -88,13 +88,15 @@
         </tr>
         </thead>';
 
-        foreach ($items as $item) {
-            
-            $accion_eliminar = "onclick=\"if(confirm('¿Estas Seguro de Eliminar')){window.location.href = ''}\"";
+        foreach ($items as $item) {            
+            $link_editar = '/examenfinal/' . MODULO .  EDIT_PERFIL . '/?perfil_id=' . $item['id_perfil'] ;            
+            $link_eliminar = '/examenfinal/' . MODULO .  DELETE_PERFIL . '/?perfil_id=' . $item['id_perfil'] ;
+            echo $link_eliminar;
+            $accion_eliminar = "onclick=\"if(confirm('¿Estas Seguro de Eliminar ".$item['descripcion_perfil']." [".$item['id_perfil']."]?')){window.location.href = '".$link_eliminar."'}\"";
             $html .='<tr>
               <th scope="row">'.$item['id_perfil'].'</th>
               <td>'.$item['descripcion_perfil'].'</td>
-              <td><a href="">Editar</a> / <a href="#" '.$accion_eliminar.'>Eliminar</a></td>
+              <td><a href="'.$link_editar.'">Editar</a> / <a href="javascript:void()" '.$accion_eliminar.'>Eliminar</a></td>
             </tr>';
 
         }

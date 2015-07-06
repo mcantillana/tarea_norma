@@ -13,7 +13,7 @@
     function handler() {
         $event = GET_PERFIL_LISTAR;
         $uri = $_SERVER['REQUEST_URI' ];
-        $peticiones = array(GET_PERFIL_LISTAR);
+        $peticiones = array(GET_PERFIL_LISTAR,DELETE_PERFIL);
         foreach ($peticiones as $peticion) {
             $uri_peticion = MODULO. $peticion.'/' ;            
             if( strpos($uri, $uri_peticion) == true ) {
@@ -29,6 +29,7 @@
                 session_start();   
                 if(isset($_SESSION['username'])) {
                     
+
                     global $quickbutton;
                     global $sidebar ;
 
@@ -40,6 +41,13 @@
 
                     $data['listar_perfiles'] = render_table($perfil->gets());
 
+                    if(isset($_GET['delete']) && ($_GET['delete'] == 'ok')) {
+                        $data['mensaje'] = '<div class="alert alert-success" role="alert">El perfil se ha eliminado con éxito!</div>';
+                    } elseif (isset($_GET['delete']) && ($_GET['delete'] == 'error')) {
+                        $data['mensaje'] = '<div class="alert alert-danger" role="alert">hay problemas al intentar eliminar un registro, vuelva a intentarlo!</div>';
+                    } else {
+                        $data['mensaje'] = '';
+                    }
                     retornar_vista_dinamica(VIEW_PERFIL_LISTAR,$data);
 
                 } else {
@@ -47,7 +55,24 @@
                 }
                             
             break;
-                                                                                      
+                   
+            case DELETE_PERFIL:
+
+                if (isset($_GET['perfil_id']) && !empty($_GET['perfil_id'])) {
+                    
+                    if ($perfil->delete($_GET['perfil_id'])) {  
+                        $msg = 'ok';
+                    } else {
+                        $msg = 'error';
+                    }
+
+                    
+                } else {
+                    $msg = 'error';
+                }
+
+                header("Location: http://localhost/examenfinal/perfil/listar?delete=".$msg);
+            break;                                                                   
             default:                
                 retornar_vista($event);
         }

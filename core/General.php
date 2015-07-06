@@ -76,7 +76,7 @@ $sidebar = array(
             ),
             array(
                 'nombre' => 'Listar',
-                'link' => '/EXAMENFINAL/perfil/'
+                'link' => '/EXAMENFINAL/perfil/listar'
             ),
             array(
                 'nombre' => 'Eliminar',

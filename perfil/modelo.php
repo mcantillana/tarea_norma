@@ -78,14 +78,17 @@ class Perfil extends DBAbstractModel{
     }    
  
     # Eliminar un perfil
-     public function delete($id='' ) {
-        $this->query = "DELETE FROM perfil 
-                        WHERE id_perfil = '$id'";               
-        $this->mensaje = ($this->execute_single_query()?'Perfil eliminado': 'Perfil NO eliminado');
+     public function delete($id = '' ) {
+
+        if (empty($id)) { return false; } 
+
+        $this->query = "DELETE FROM perfil WHERE id_perfil = '$id'";               
+        return $this->execute_single_query2();
     }
+
     # Método constructor
     function __construct() {
-        $this->db_name = 'examenFinal' ;
+        $this->db_name = 'examenfinal' ;
     }
     # Método destructor del objeto
     function __destruct() {
